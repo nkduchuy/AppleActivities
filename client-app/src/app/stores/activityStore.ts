@@ -21,6 +21,7 @@ export default class ActivityStore {
             const activities = await agent.Activities.list();
             activities.forEach(activity => {
                 activity.date = activity.date.split('T')[0];
+                console.log('push in loadActivities')
                 this.activities.push(activity);
                 })
             this.setLoadingInitial(false);
@@ -62,6 +63,7 @@ export default class ActivityStore {
 
             runInAction(() => {
                 this.activities.push(activity);
+                console.log('push in createActivity')
                 this.selectedActivity = activity;
                 this.editMode = false;
                 this.loading = false;
