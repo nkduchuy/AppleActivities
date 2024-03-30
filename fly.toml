@@ -1,13 +1,13 @@
-# fly.toml app configuration file generated for reactivities-nkduchuy on 2023-12-30T11:47:51-07:00
+# fly.toml app configuration file generated for appleactivities on 2024-03-29T21:27:11-06:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "reactivities-nkduchuy"
-primary_region = "sea"
+app = 'appleactivities'
+primary_region = 'sea'
 
 [build]
-  image = "nkduchuy/reactivities:latest"
+  image = 'nkduchuy/appleactivities:latest'
 
 [env]
   ASPNETCORE_URLS="http://+:8080"
@@ -20,9 +20,9 @@ primary_region = "sea"
   auto_stop_machines = true
   auto_start_machines = true
   min_machines_running = 0
-  processes = ["app"]
+  processes = ['app']
 
 [[vm]]
-  cpu_kind = "shared"
+  memory = '1gb'
+  cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 1024
